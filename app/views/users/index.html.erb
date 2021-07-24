@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Coding Challenge User Information</h1>
+
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover table-bordered"> 
+      <thead class="thead table-light">
+        <tr>
+          <th>First name</th>
+          <th>Middle initial</th>
+          <th>Last name</th>
+          <th>Prefix</th>
+          <th>Address01</th>
+          <th>Address02</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zipcode</th>
+          <th>Education</th>
+          <th>Estimated income</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.first_name %></td>
+            <td><%= user.middle_initial %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.prefix %></td>
+            <td><%= user.address01 %></td>
+            <td><%= user.address02 %></td>
+            <td><%= user.city %></td>
+            <td><%= user.state %></td>
+            <td><%= user.zipcode %></td>
+            <td><%= user.education %></td>
+            <td><%= user.estimated_income %></td>
+            <td><%= link_to 'Show', user %></td>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br>
+
+<h3>Upload File<h3>
+<%=form_tag users_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%submit_tag "Upload File" %>
+<% end %>
+
+<%= link_to "Education Chart", home_education_path, class:="btn btn-secondary" %>
+
+<%= link_to 'New User', new_user_path, class:="btn btn-light" %>

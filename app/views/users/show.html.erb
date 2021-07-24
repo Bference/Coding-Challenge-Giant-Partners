@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Middle initial:</strong>
+  <%= @user.middle_initial %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Prefix:</strong>
+  <%= @user.prefix %>
+</p>
+
+<p>
+  <strong>Address01:</strong>
+  <%= @user.address01 %>
+</p>
+
+<p>
+  <strong>Address02:</strong>
+  <%= @user.address02 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @user.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @user.state %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @user.zipcode %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @user.education %>
+</p>
+
+<p>
+  <strong>Estimated income:</strong>
+  <%= @user.estimated_income %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user, class:="btn btn-light" %> |
+<%= link_to 'Back', users_path, class:="btn btn-light"   %>
